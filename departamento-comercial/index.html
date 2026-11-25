@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Departamento Comercial v1 — Demo funcional</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: Georgia, 'Times New Roman', serif; background:#f6f2fb; color:#1d1d1f; }
+  .topbar { position:sticky; top:0; z-index:10; background:#14100f; color:#fff; display:flex; align-items:center; justify-content:center; gap:14px; padding:12px 16px; font-family: Arial, Helvetica, sans-serif; }
+  .topbar .t { font-size:15px; font-weight:600; }
+  .topbar .t b { color:#b79ced; }
+  .wrap { max-width:880px; margin:0 auto; padding:36px 20px 60px; }
+  .kicker { font-family: Arial, Helvetica, sans-serif; letter-spacing:2px; font-size:12px; font-weight:700; color:#7b3fe4; text-transform:uppercase; margin-bottom:14px; text-align:center; }
+  h1 { font-size:40px; line-height:1.15; font-weight:800; text-align:center; }
+  h1 .acc { color:#7b3fe4; }
+  .sub { font-size:19px; color:#4a4a4f; line-height:1.55; margin:20px auto 30px; max-width:680px; text-align:center; }
+  h2.sec { font-size:26px; margin:40px 0 16px; text-align:center; }
+  .steps { display:flex; flex-wrap:wrap; gap:8px; justify-content:center; align-items:center; font-family: Arial, Helvetica, sans-serif; margin-bottom:8px; }
+  .step { background:#fff; border:1.5px solid #e3d9f7; border-radius:999px; padding:9px 16px; font-size:14.5px; font-weight:600; }
+  .step b { color:#7b3fe4; }
+  .arrow { color:#9a86c8; font-weight:700; }
+  .note { font-family: Arial, Helvetica, sans-serif; font-size:14.5px; color:#55565c; line-height:1.55; max-width:680px; margin:14px auto 0; text-align:center; }
+  .board { display:grid; grid-template-columns:repeat(4, 1fr); gap:12px; margin-top:6px; }
+  @media (max-width:760px){ .board { grid-template-columns:1fr; } h1 { font-size:32px; } }
+  .col { background:#efe9fa; border:1.5px solid #e3d9f7; border-radius:14px; padding:12px 10px; min-height:120px; }
+  .col h3 { font-family: Arial, Helvetica, sans-serif; font-size:13px; letter-spacing:1.2px; text-transform:uppercase; color:#5a4a86; margin-bottom:10px; text-align:center; }
+  .col .empty { font-family: Arial, Helvetica, sans-serif; font-size:13px; color:#9a8fc0; text-align:center; padding:14px 4px; }
+  .card { background:#fff; border-radius:12px; padding:14px 13px; margin-bottom:10px; box-shadow:0 2px 10px rgba(60,30,120,.08); text-align:left; }
+  .card .name { font-size:16.5px; font-weight:700; line-height:1.25; }
+  .card .biz { font-family: Arial, Helvetica, sans-serif; font-size:13.5px; color:#7b3fe4; font-weight:700; margin:2px 0 8px; }
+  .card .meta { font-family: Arial, Helvetica, sans-serif; font-size:12.5px; color:#6d6d72; line-height:1.5; }
+  .card .need { font-family: Arial, Helvetica, sans-serif; font-size:13.5px; color:#3c3c40; line-height:1.5; margin-top:8px; }
+  .card .need b { color:#1d1d1f; }
+  .draft { background:#f6f2fb; border:1.5px dashed #b79ced; border-radius:10px; padding:11px 12px; margin-top:10px; }
+  .draft .tag { font-family: Arial, Helvetica, sans-serif; font-size:11px; font-weight:700; letter-spacing:1px; text-transform:uppercase; color:#7b3fe4; margin-bottom:6px; }
+  .draft p { font-size:13.5px; line-height:1.55; color:#2c2c30; font-style:italic; }
+  .draft .model { font-family: Arial, Helvetica, sans-serif; font-style:normal; font-size:11.5px; color:#8a8496; margin-top:7px; }
+  .status { background:#fff; border-radius:14px; padding:22px 22px 14px; box-shadow:0 2px 10px rgba(60,30,120,.08); max-width:680px; margin:0 auto; font-family: Arial, Helvetica, sans-serif; }
+  .status li { list-style:none; padding:9px 0 9px 30px; position:relative; font-size:15px; border-bottom:1px solid #e7e0f5; line-height:1.5; }
+  .status li:last-child { border-bottom:none; }
+  .status li::before { content:"✓"; position:absolute; left:2px; color:#7b3fe4; font-weight:800; }
+  .todo { text-align:left; max-width:680px; margin:0 auto; font-family: Arial, Helvetica, sans-serif; }
+  .todo li { list-style:none; padding:9px 0 9px 30px; position:relative; font-size:15px; border-bottom:1px solid #e7e0f5; line-height:1.5; }
+  .todo li::before { content:"→"; position:absolute; left:2px; color:#7b3fe4; font-weight:800; }
+  .foot { font-family: Arial, Helvetica, sans-serif; font-size:13px; color:#8a8496; text-align:center; margin-top:44px; line-height:1.6; }
+</style>
+</head>
+<body>
+
+<div class="topbar"><span class="t">Departamento Comercial <b>v1</b> · Demo funcional</span></div>
+
+<div class="wrap">
+
+  <div class="kicker">Prueba construida y probada · 24 de noviembre de 2026</div>
+  <h1>Departamento <span class="acc">Comercial</span> v1</h1>
+  <p class="sub">Un «empleado» de captación hecho con piezas que ya existen: una página que recibe clientes potenciales, un tablero para seguirlos y una IA que redacta el primer mensaje de seguimiento. <b>El mensaje nunca se envía solo</b>: queda como borrador esperando aprobación.</p>
+
+  <h2 class="sec">Cómo funciona</h2>
+  <div class="steps">
+    <span class="step"><b>1</b> Formulario de captación</span><span class="arrow">→</span>
+    <span class="step"><b>2</b> n8n recibe el lead</span><span class="arrow">→</span>
+    <span class="step"><b>3</b> La IA redacta el seguimiento</span><span class="arrow">→</span>
+    <span class="step"><b>4</b> Borrador en el tablero</span><span class="arrow">→</span>
+    <span class="step"><b>5</b> Aprobación antes de enviar</span>
+  </div>
+  <p class="note">El cliente potencial llena el formulario (nombre, negocio, contacto y qué necesita). El flujo de n8n «Departamento Comercial - Captación» toma esos datos y la IA (Groq, modelo <i>openai/gpt-oss-120b</i>, con respaldo de Gemini) escribe un mensaje de seguimiento en español, personalizado con el negocio y la necesidad de esa persona. El borrador se guarda en su tarjeta del tablero. Nada sale hacia el cliente sin aprobación.</p>
+
+  <h2 class="sec">El tablero, con la prueba real</h2>
+  <p class="note" style="margin:0 auto 18px;">Esto es el estado real de la demo en el servidor, tal cual quedó tras la prueba del 24 de noviembre (23:29–23:32). Los dos clientes de ejemplo entraron por el formulario y cada uno generó su borrador:</p>
+
+  <div class="board">
+    <div class="col">
+      <h3>Nuevo</h3>
+
+      <div class="card">
+        <div class="name">Laura Prueba</div>
+        <div class="biz">Tienda Ejemplo</div>
+        <div class="meta">24 nov 2026 · 23:29<br>Contacto: 809-555-0101</div>
+        <p class="need"><b>Necesidad:</b> «Prueba del sistema: quiero una página web para mi negocio y automatizar los pedidos por WhatsApp»</p>
+        <div class="draft">
+          <div class="tag">Borrador IA · pendiente de aprobación</div>
+          <p>«Hola Laura, gracias por contactarnos. Entiendo que en Tienda Ejemplo deseas una página web y automatizar los pedidos por WhatsApp. Podemos diseñar una solución a tu medida y facilitar la gestión de tus ventas. ¿Te parece si agendamos una breve llamada para conocer más detalles y definir los próximos pasos?»</p>
+          <div class="model">Generado por Groq (openai/gpt-oss-120b) · No enviado</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="name">Carlos Demo</div>
+        <div class="biz">Taller Demo Motors</div>
+        <div class="meta">24 nov 2026 · 23:32<br>Contacto: carlos@ejemplo.com</div>
+        <p class="need"><b>Necesidad:</b> «Necesito automatizar las citas de mi taller y responder clientes por WhatsApp»</p>
+        <div class="draft">
+          <div class="tag">Borrador IA · pendiente de aprobación</div>
+          <p>«Hola Carlos, soy del equipo de Soluciones AI. Entendemos que en Taller Demo Motors deseas automatizar las citas y responder a tus clientes por WhatsApp. ¿Te parece si coordinamos una breve llamada para mostrarte cómo podemos implementarlo?»</p>
+          <div class="model">Generado por Groq (openai/gpt-oss-120b) · No enviado</div>
+        </div>
+      </div>
+
+    </div>
+    <div class="col">
+      <h3>Contactado</h3>
+      <div class="empty">Sin tarjetas todavía</div>
+    </div>
+    <div class="col">
+      <h3>Propuesta</h3>
+      <div class="empty">Sin tarjetas todavía</div>
+    </div>
+    <div class="col">
+      <h3>Cerrado</h3>
+      <div class="empty">Sin tarjetas todavía</div>
+    </div>
+  </div>
+
+  <h2 class="sec">Estado de la demo</h2>
+  <ul class="status">
+    <li><b>Funciona de principio a fin:</b> formulario → n8n → borrador de IA → tablero, probado con los dos clientes de arriba.</li>
+    <li><b>Vive en el VPS</b> (servidor propio), encendido sin depender de la PC.</li>
+    <li><b>Acceso solo por red privada (Tailscale):</b> la demo no está expuesta a internet; esta página es solo una vitrina con su estado.</li>
+    <li><b>Nada se envía sin aprobación:</b> los mensajes quedan como borradores, por diseño de la prueba.</li>
+    <li><b>Las llaves de IA viven solo dentro del servidor</b> y nunca salen de ahí. Costo extra de la prueba: $0.</li>
+  </ul>
+
+  <h2 class="sec">Qué falta para producción</h2>
+  <ul class="todo">
+    <li><b>Salida pública:</b> dominio + HTTPS para que clientes reales puedan llegar al formulario (el tablero, siempre con login).</li>
+    <li><b>Aviso inmediato</b> cuando entra un cliente nuevo, con el borrador listo para aprobar (Telegram, WhatsApp o correo).</li>
+    <li><b>Botón «Aprobar y enviar»</b> para mandar el mensaje por WhatsApp tras la aprobación.</li>
+    <li><b>Protección del formulario</b> contra spam y una base de datos con respaldo automático (hoy es un archivo local, suficiente para la demo).</li>
+    <li><b>Seguimiento:</b> recordatorios de clientes sin respuesta y plantillas por tipo de servicio.</li>
+  </ul>
+
+  <p class="foot">Vitrina generada a partir del estado real de la demo en el servidor · Los clientes mostrados son los dos registros de prueba del sistema.</p>
+
+</div>
+</body>
+</html>
