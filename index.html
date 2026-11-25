@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paquete Completo — Productos Digitales</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: Georgia, 'Times New Roman', serif; background:#f6f2fb; color:#1d1d1f; }
+  .topbar { position:sticky; top:0; z-index:10; background:#14100f; color:#fff; display:flex; align-items:center; justify-content:center; gap:14px; padding:12px 16px; font-family: Arial, Helvetica, sans-serif; }
+  .topbar .t { font-size:15px; font-weight:600; }
+  .topbar .t b { color:#b79ced; }
+  .btn { background:#7b3fe4; color:#fff; border:none; border-radius:10px; padding:11px 22px; font-size:15px; font-weight:700; cursor:pointer; font-family: Arial, Helvetica, sans-serif; text-decoration:none; display:inline-block; }
+  .wrap { max-width:760px; margin:0 auto; padding:36px 20px 60px; text-align:center; }
+  .kicker { font-family: Arial, Helvetica, sans-serif; letter-spacing:2px; font-size:12px; font-weight:700; color:#7b3fe4; text-transform:uppercase; margin-bottom:14px; }
+  h1 { font-size:42px; line-height:1.15; font-weight:800; }
+  h1 .acc { color:#7b3fe4; }
+  .sub { font-size:20px; color:#4a4a4f; line-height:1.5; margin:20px auto 28px; max-width:620px; }
+  .steps { display:flex; flex-wrap:wrap; gap:8px; justify-content:center; align-items:center; font-family: Arial, Helvetica, sans-serif; margin-bottom:38px; }
+  .step { background:#fff; border:1.5px solid #e3d9f7; border-radius:999px; padding:9px 16px; font-size:14.5px; font-weight:600; }
+  .step b { color:#7b3fe4; }
+  .arrow { color:#9a86c8; font-weight:700; }
+  .collage { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin:0 auto 38px; max-width:640px; }
+  .tile { background:#fff; border-radius:14px; padding:20px 16px 16px; position:relative; box-shadow:0 2px 10px rgba(60,30,120,.08); text-align:left; }
+  .tile .num { position:absolute; top:-11px; left:-11px; width:30px; height:30px; border-radius:50%; background:#5d7a4e; color:#fff; font-family: Arial, Helvetica, sans-serif; font-weight:700; font-size:15px; display:flex; align-items:center; justify-content:center; }
+  .tile .ico { font-size:30px; }
+  .tile h3 { font-size:17px; margin:8px 0 5px; line-height:1.3; }
+  .tile p { font-size:13.5px; color:#55565c; line-height:1.45; font-family: Arial, Helvetica, sans-serif; }
+  .pricebox { border:2.5px dashed #7b3fe4; border-radius:18px; background:#fff; padding:28px 20px; max-width:480px; margin:0 auto 30px; }
+  .pricebox .normal { font-size:20px; color:#6d6d72; text-decoration: line-through; }
+  .pricebox .big { font-size:44px; font-weight:800; color:#7b3fe4; margin:6px 0; }
+  .pricebox .per { font-size:16px; color:#3c3c40; font-family: Arial, Helvetica, sans-serif; }
+  .bigbtn { font-size:18px; padding:16px 38px; border-radius:12px; }
+  .incl { text-align:left; max-width:520px; margin:36px auto; font-family: Arial, Helvetica, sans-serif; }
+  .incl h2 { font-family: Georgia, serif; text-align:center; font-size:26px; margin-bottom:16px; }
+  .incl li { list-style:none; padding:9px 0 9px 30px; position:relative; font-size:15.5px; border-bottom:1px solid #e7e0f5; line-height:1.45; }
+  .incl li::before { content:"✓"; position:absolute; left:2px; color:#7b3fe4; font-weight:800; }
+  .faq { text-align:left; max-width:520px; margin:0 auto 36px; font-family: Arial, Helvetica, sans-serif; }
+  .faq h2 { font-family: Georgia, serif; text-align:center; font-size:26px; margin-bottom:14px; }
+  .faq p { font-size:15px; line-height:1.55; margin-bottom:12px; color:#333338; }
+  .faq p b { color:#1d1d1f; }
+  .fine { font-size:12.5px; color:#8a8a90; font-family: Arial, Helvetica, sans-serif; margin-top:22px; line-height:1.5; }
+  @media (max-width:520px){ h1{font-size:33px;} .sub{font-size:17.5px;} .pricebox .big{font-size:36px;} }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <span class="t"><b>$19</b> por los 3 productos digitales</span>
+  <a class="btn" href="#comprar">Quiero acceso</a>
+</div>
+
+<div class="wrap">
+  <div class="kicker">Paquete completo · Descarga inmediata</div>
+  <h1>Ordena tu negocio y <span class="acc">vende más</span> con herramientas que <span class="acc">ya puedes usar hoy</span></h1>
+  <p class="sub">200 prompts de IA listos para copiar, una plantilla de Notion que ordena tus clientes y tu dinero, y un bundle de juegos navideños imprimibles en inglés y español. Sin cursos largos, sin tecnicismos: descargar y usar.</p>
+
+  <div class="steps">
+    <span class="step"><b>1</b> Pídelo</span><span class="arrow">→</span>
+    <span class="step"><b>2</b> Descárgalo</span><span class="arrow">→</span>
+    <span class="step"><b>3</b> Aplícalo</span><span class="arrow">→</span>
+    <span class="step"><b>4</b> Vende más</span>
+  </div>
+
+  <div class="collage">
+    <div class="tile"><span class="num">1</span><div class="ico">💬</div><h3>200 prompts de IA para negocios locales</h3><p>Cada prompt trae un ejemplo ya rellenado: Instagram, WhatsApp, reseñas, promociones, cobranza amable y más. 61 páginas.</p></div>
+    <div class="tile"><span class="num">2</span><div class="ico">🗂️</div><h3>Negocio en Orden 2027 — Notion</h3><p>9 módulos conectados: clientes, pipeline de ventas, ingresos y gastos, contenido, inventario y metas. Con guía de 13 páginas.</p></div>
+    <div class="tile"><span class="num">3</span><div class="ico">🎄</div><h3>Juegos navideños imprimibles — EN</h3><p>22 juegos para la fiesta de Navidad en inglés: bingo con 12 tarjetas, trivia, adivinanzas y hoja de puntos. 34 páginas.</p></div>
+    <div class="tile"><span class="num">4</span><div class="ico">🎁</div><h3>Juegos navideños imprimibles — ES</h3><p>Los mismos 22 juegos en español, con sabor dominicano: Reyes Magos, doble sueldo, pernil y angelito. 34 páginas.</p></div>
+    <div class="tile"><span class="num">5</span><div class="ico">📖</div><h3>Guías paso a paso incluidas</h3><p>Cada producto trae su guía en palabras simples: cómo usarlo desde el primer día, sin saber de tecnología.</p></div>
+    <div class="tile"><span class="num">6</span><div class="ico">📱</div><h3>Todo desde tu celular</h3><p>PDF listos para abrir, imprimir o compartir desde el teléfono. Sin instalaciones raras.</p></div>
+  </div>
+
+  <div class="pricebox" id="comprar">
+    <div class="normal">Normalmente $37</div>
+    <div class="big">Los 3 por $19</div>
+    <div class="per">Pago único · Sin suscripción · Tuyos para siempre</div>
+  </div>
+
+  <a class="btn bigbtn" href="#comprar">Quiero el paquete completo</a>
+
+  <div class="incl">
+    <h2>Todo lo que recibes</h2>
+    <ul>
+      <li><b>Pack de Prompts de IA para Negocios Locales</b> — 200 prompts con ejemplo resuelto, 17 categorías (valorado en $12.99)</li>
+      <li><b>Negocio en Orden 2027</b> — plantilla de Notion con 9 módulos, 103 propiedades y un trimestre de datos de ejemplo + guía de uso de 13 páginas (valorado en $19)</li>
+      <li><b>Bundle de Juegos Navideños EN + ES</b> — 22 juegos imprimibles por idioma, con bingo de 12 tarjetas y hoja de puntos (valorado en $4.99)</li>
+      <li>Descarga inmediata después del pago, en tu correo</li>
+      <li>Actualizaciones de estos productos incluidas</li>
+    </ul>
+  </div>
+
+  <div class="faq">
+    <h2>Preguntas frecuentes</h2>
+    <p><b>¿Cómo recibo los productos?</b> Al pagar, la plataforma te entrega los archivos al instante: los PDF se descargan y la plantilla de Notion se duplica en tu cuenta con un enlace.</p>
+    <p><b>¿Necesito pagar Notion o alguna IA?</b> No. La plantilla funciona con el Notion gratuito y los prompts sirven en cualquier chat de IA gratuito.</p>
+    <p><b>¿Y si no me sirve?</b> Aplica la garantía de la plataforma de compra.</p>
+  </div>
+
+  <a class="btn bigbtn" href="#comprar">Sí, quiero todo por $19</a>
+  <p class="fine">Productos digitales de descarga inmediata. Los botones de compra se activan al publicar la tienda.</p>
+</div>
+
+</body>
+</html>
